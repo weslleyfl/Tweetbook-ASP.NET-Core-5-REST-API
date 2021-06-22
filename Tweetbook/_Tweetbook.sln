@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweetbook", "Tweetbook.csproj", "{92D73CE2-B9F4-49E7-B260-6C6CE2E66030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweetbook.Contracts", "..\Tweetbook.Contracts\Tweetbook.Contracts.csproj", "{11D58C02-5DCB-40B4-BC8B-12F77718C7F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92D73CE2-B9F4-49E7-B260-6C6CE2E66030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92D73CE2-B9F4-49E7-B260-6C6CE2E66030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92D73CE2-B9F4-49E7-B260-6C6CE2E66030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92D73CE2-B9F4-49E7-B260-6C6CE2E66030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D58C02-5DCB-40B4-BC8B-12F77718C7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D58C02-5DCB-40B4-BC8B-12F77718C7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D58C02-5DCB-40B4-BC8B-12F77718C7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D58C02-5DCB-40B4-BC8B-12F77718C7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B57A4CD-F787-4011-A903-CCD70B33652B}
+	EndGlobalSection
+EndGlobal
