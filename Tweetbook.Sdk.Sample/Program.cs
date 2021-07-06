@@ -14,9 +14,12 @@ namespace Tweetbook.Sdk.Sample
         /// <returns></returns>
         static async Task Main(string[] args)
         {
+
+
             var cachedToken = string.Empty;
 
             // O Refit é uma biblioteca que permite representar uma REST API através de uma interface.
+            // Esta configuraçao pode ser feita na classe startup
             var identityApi = RestService.For<IIdentityApi>("https://localhost:5001");
             var tweetbookApi = RestService.For<ITweetbookApi>("https://localhost:5001", new RefitSettings
             {

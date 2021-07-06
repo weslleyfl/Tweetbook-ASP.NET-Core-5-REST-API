@@ -39,16 +39,6 @@ namespace Tweetbook.Services
                 .ToListAsync();
         }
 
-        private IQueryable<Post> AddFiltersOnQuery(GetAllPostsFilter filter, IQueryable<Post> queryable)
-        {
-            if (string.IsNullOrEmpty(filter?.UserId) == false)
-            {
-                queryable = queryable.Where(x => x.UserId == filter.UserId);
-            }
-
-            return queryable;
-        }
-
         public async Task<Post> GetPostByIdAsync(Guid postId)
         {
             return await _dataContext.Posts
@@ -66,7 +56,6 @@ namespace Tweetbook.Services
             var created = await _dataContext.SaveChangesAsync();
             return created > 0;
         }
-
 
         public async Task<bool> UpdatePostAsync(Post postToUpdate)
         {
@@ -154,6 +143,16 @@ namespace Tweetbook.Services
             return await _dataContext.SaveChangesAsync() > postTags.Count;
         }
 
+        private IQueryable<Post> AddFiltersOnQuery(GetAllPostsFilter filter, IQueryable<Post> queryable)
+        {
+            if (string.IsNullOrEmpty(filter?.UserId) == false)
+            {
+                queryable = queryable.Where(x => x.UserId == filter.UserId);
+            }
+
+            return queryable;
+        }
+
         private async Task AddNewTags(Post post)
         {
             foreach (var tag in post.Tags)
@@ -176,6 +175,8 @@ namespace Tweetbook.Services
 
             }
         }
+
+
 
 
     }

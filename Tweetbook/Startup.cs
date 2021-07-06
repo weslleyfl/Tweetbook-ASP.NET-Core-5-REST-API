@@ -14,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tweetbook.Extensions;
 using Tweetbook.Installers;
 using Tweetbook.Options;
 
@@ -48,6 +49,9 @@ namespace Tweetbook
                 //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tweetbook v1"));
                 app.UseSwaggerUI(c => c.SwaggerEndpoint(swaggerOptions.JsonRoute, swaggerOptions.Description));
             }
+
+            // Adding Health Checks | ASP.NET Core 5          
+            app.UseHealthChecksConfig();
 
             app.UseHttpsRedirection();
 

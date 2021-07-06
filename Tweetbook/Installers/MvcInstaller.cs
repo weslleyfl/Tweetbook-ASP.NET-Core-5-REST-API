@@ -36,6 +36,7 @@ namespace Tweetbook.Installers
             });
 
 
+            // URI
             services.AddSingleton<IUriService>(provider =>
             {
                 var accessor = provider.GetRequiredService<IHttpContextAccessor>();
