@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@inject SignInManager<IdentityUser> SignInManager
+
+<div class="text-center">
+    <h1 class="display-4">Say hello using the People API</h1>
+    <p>Say hello using the People API.</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize-button" style="display: none;">Authorize</button>
+    <button id="signout-button" style="display: none;">Sign Out</button>
+
+    <div id="content"></div>
+    @{
+        var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+        if (loginProviders.Any())
+        {
+
+
+            <form asp-page="Login/ExternalLogin" asp-route-returnurl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                <div>
+                    <p>
+                        @foreach (var provider in loginProviders)
+                        {
+                            <button type="submit" class="btn btn-info" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                        }
+                    </p>
+                </div>
+            </form>
+
+        }
+        else
+        {
+            <div>
+                <p>
+                    We couldn't find any external provider
+                </p>
+            </div>
+        }
+    }
+
+</div>
+
+
+@section Scripts {
+
+}
